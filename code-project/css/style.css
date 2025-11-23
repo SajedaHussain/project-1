@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#instructions-screen, #start-screen, #game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+#instructions-screen {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#instructions-screen p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+#instructions-start-btn, #start-btn, #next-level-btn, #reset-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s;
+}
+
+#instructions-start-btn:hover, #start-btn:hover, #next-level-btn:hover {
+    background: #45a049;
+}
+
+#reset-button {
+    background: #ff5722;
+}
+
+#reset-button:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+}
+
+#level-display {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#question-display {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: azure;
+}
+
+#options-container {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#options-container button {
+    padding: 15px 25px;
+    font-size: 25px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+#options-container button:hover {
+    background: #1976D2;
+    transform: scale(1.05);
+}
+
+#options-container button:disabled {
+    background: #ccc !important;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+#result {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0;
+    min-height: 40px;
+}
+
+#timer-display {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    min-width: 120px;
+}
