@@ -300,7 +300,7 @@ function resetGame() {
     nextLevelBtn.classList.add("hidden");
     gameScreen.classList.add("hidden");
     startScreen.classList.remove("hidden");
-    instructionsScreen.classList.add("hidden");
+    instructionsScreen.classList.remove("hidden");
     resultDisplay.textContent = "";
     if (timerDisplay) timerDisplay.textContent = "";
 }
