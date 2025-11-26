@@ -281,6 +281,9 @@ const timerDisplay = document.querySelector("#timer-display");
 const resetButtonEl = document.querySelector("#reset-button");
 const instructionsScreen = document.querySelector("#instructions-screen");
 const instructionsStartBtn = document.querySelector("#instructions-start-btn");
+const gameAudio = new Audio ('../assets/game.mp3')
+const clapAudio = new Audio('../assets/clap.wav')
+const loseAudio = new Audio('../assets/lose.wav')
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -300,7 +303,7 @@ function resetGame() {
     nextLevelBtn.classList.add("hidden");
     gameScreen.classList.add("hidden");
     startScreen.classList.remove("hidden");
-    instructionsScreen.classList.remove("hidden");
+    // instructionsScreen.classList.remove("hidden");
     resultDisplay.textContent = "";
     if (timerDisplay) timerDisplay.textContent = "";
 }
@@ -399,16 +402,14 @@ function updateTimerDisplay() {
 // Time's up - يرجع للريست تلقائياً
 function timeUp() {
     resultDisplay.textContent = "⏰ Time's Up! You lost!";
-    resultDisplay.style.color = "#f44336";
+    resultDisplay.style.color = "#f8f7f7ff";
+    loseAudio.play()
 
     document.querySelectorAll('#options-container button').forEach(btn => {
         btn.disabled = true;
     });
 
-    // بعد 2 ثانية يرجع تلقائياً للريست
-    setTimeout(() => {
-        resetGame();
-    }, 2000);
+
 }
 
 // Handle element choice
@@ -437,20 +438,20 @@ function checkAnswer() {
     if (isCorrect) {
         clearInterval(timer);
         resultDisplay.textContent = "Correct! ✔️";
-        resultDisplay.style.color = "#4CAF50";
+        resultDisplay.style.color = "#45a348ff";
         nextLevelBtn.classList.remove("hidden");
+        clapAudio.play()
 
         document.querySelectorAll('#options-container button').forEach(btn => {
             btn.disabled = true;
+    
         });
     } else if (selectedElements.length >= correct.length) {
         resultDisplay.textContent = "Wrong combination! You lost! ❌";
-        resultDisplay.style.color = "#f44336";
+        resultDisplay.style.color = "#fffbfbff";
         resetButtonEl.classList.remove("hidden");
-        // بعد 2 ثانية يرجع تلقائياً للريست
-        setTimeout(() => {
-            resetGame();
-        }, 2000);
+        loseAudio.play()
+
     }
 }
 
@@ -478,6 +479,7 @@ startBtn.addEventListener("click", () => {
     startScreen.classList.add("hidden");
     gameScreen.classList.remove("hidden");
     currentLevel = 0;
+    gameAudio.play()
     loadLevel();
 });
 
