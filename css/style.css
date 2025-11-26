@@ -57,9 +57,10 @@ body {
 #instructions-start-btn {
     background: #5a5d63;
     color: white;
+    font-weight: bold;
     border: none;
     padding: 15px 30px;
-    font-size: 18px;
+    font-size: 30px;
     border-radius: 25px;
     cursor: pointer;
     margin: 10px;
@@ -69,9 +70,10 @@ body {
  #start-btn {
     background: #0ccc39;
     color: white;
+    font-weight: bold;
     border: none;
     padding: 15px 30px;
-    font-size: 18px;
+    font-size: 30px;
     border-radius: 25px;
     cursor: pointer;
     margin: 10px;
@@ -86,8 +88,8 @@ body {
 
 #level-display {
     position: absolute;
-    top: 70px;
-    right: 25px;
+    top: 90px;
+    right: 33px;
     font-size: 24px;
     font-weight: bold;
     background: rgba(0, 0, 0, 0.3);
@@ -97,7 +99,7 @@ body {
 
 #timer-display {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 20px;
     font-size: 24px;
     font-weight: bold;
@@ -117,7 +119,7 @@ body {
 }
 
 #question-display {
-    font-size: 28px;
+    font-size:30px;
     background: rgba(255, 255, 255, 0.15);
     padding: 15px 25px;
     border-radius: 12px;
@@ -186,7 +188,7 @@ body {
 
 /* nnnn */
 #result {
-    font-size: 22px;
+    font-size:30px;
     font-weight: bold;
     margin: 20px 0;
     min-height: 40px;
@@ -204,13 +206,14 @@ body {
     color: white;
     border: none;
     padding: 12px 25px;
-    font-size: 16px;
+    font-size: 30px;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 #reset-button {
+    font-weight: bold;
     background: #2234ff;
 }
 
@@ -300,4 +303,16 @@ button:focus {
   100%{
     background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,.4) 100%);
   }
+}
+
+#timer-display, #level-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 12px 25px;
+    border-radius: 12px;
+    border: 2px solid #8b33ff;
+    box-shadow: 0 0 15px #a259ff, 0 0 30px #cfa8ff;
 }
